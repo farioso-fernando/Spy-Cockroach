@@ -4,7 +4,11 @@
 import os
 
 # Pegando o caminho raiz dos arquivos como um: "/"
-PATH = "/home/farioso/www/file03_git/fluentui-system-icons/assets"
+from models.paths import PATH
+
+# # A pasta que colocaremos os nossos arquivos.
+# nameCreatedFolder = "test/"
+# destinationFolderCreated = "{}/{}".format(PATH, nameCreatedFolder)
 
 # Indo para a raiz: "/". 
 # Nota: Quando digo raiz, quero dizer o diretorio principal ou pai que contém seus arquivos.
@@ -36,8 +40,14 @@ for path in mother_folder:
             # Depois de gerada a lista, corremos a mesma para a variavel "sigle_file" que retorna o que está dentro dela.
             file_list = [file.name for file in os.scandir(PATH +"/"+path+"/"+subfolders[0]) if file.is_file()]
             for single_file in file_list:
+
+                # The spy cockroach arrived and found what it wanted.
                 print(single_file)
         
         # Capturando erro.
         except os.error as exceptError:
             print("Error: {}".format(exceptError))
+
+# # Criando pasta.
+# # if not os.path.exists(destinationFolderCreated):
+# os.makedirs("destinationFolderCreated")
