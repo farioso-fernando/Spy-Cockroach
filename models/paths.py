@@ -13,3 +13,4 @@ createdPATH = "soSvg"
 
 # Caso não queira importar varias pastas.
 allPATHS = [PATH, testPATH, createdPATH]
+

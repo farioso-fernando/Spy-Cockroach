@@ -4,16 +4,19 @@ sys.path.insert(0,"/home/farioso/Área de Trabalho/spy_cockroach/models/")
 sys.path.insert(0,"/home/farioso/Área de Trabalho/spy_cockroach/controllers/")
 
 import paths
-import time
 import movefile
+
+# Pegando antes o caminho da pasta de onde roda o spy cockroach, pois é onde queremos criar a nossa pasta de lançamento.
+appPATH = os.getcwd()
 
 def cloggedCesspool(src, dst):
     """
     Função de criação da nova pasta e no chamamento da função que irá mover os arquivos ao seu destino final. O covil da barata espiã.
     """
+    
     # verificando se existe a pasta em que iremos guardar nossos arquivos.
     # se existir, navegamos para ela.
-    print(os.getcwd)
+    os.chdir(appPATH)
     if os.path.exists(paths.testPATH):
         
         # Navegando a pasta files.
@@ -47,4 +50,5 @@ def cloggedCesspool(src, dst):
             print("Algo ocorreu de forma inesperada. Tente novamente.")
             return None
     else:
+        # Caso não encontre a pasta.
         print("Nao encontrado")

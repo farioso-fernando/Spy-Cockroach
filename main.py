@@ -36,11 +36,9 @@ filter = 0
 # Varrendo a lista de arquivos na pasta mãe para a variavel path.
 for path in mother_folder:
     
-    filter+=1
-    
     # Definindo a quantidade de resultados que serão retornados.
     # Quando a condição é atendida, o "filter" é reiniciado para zero e a listagem é abortada.
-    if filter>=2:
+    if filter>=1:
         filter = 0
         break
     else:
@@ -55,7 +53,7 @@ for path in mother_folder:
             for single_file in file_list:
 
                 # The spy cockroach arrived and found what it wanted.
-                print(single_file)
+                #print(single_file)
                 # Nosso source. De onde iremos mover o arquivo
                 exactLocationOfTheFile = "{}/{}/{}/{}".format(paths.PATH,path,subfolders[0],single_file)
 
@@ -73,7 +71,5 @@ for path in mother_folder:
         # Capturando erro.
         except os.error as exceptError:
             print("Error: {}".format(exceptError))
-
-# # Criando pasta.
-# # if not os.path.exists(destinationFolderCreated):
-# os.makedirs("destinationFolderCreated")
+    
+    filter+=1
