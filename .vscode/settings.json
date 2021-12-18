@@ -2,6 +2,7 @@
     "python.analysis.extraPaths": [
         "./test",
         "./models",
-        "./controllers"
+        "./controllers",
+        "./lib/models"
     ]
 }
