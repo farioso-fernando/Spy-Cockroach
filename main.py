@@ -16,7 +16,8 @@ import paths
 from controllers.createpath import cloggedCesspool
 
 # Pegando o caminho onde relativo ao a origin da app.
-appPATH = os.getcwd()
+from models.origin_path import originFolderApp
+appPATH = originFolderApp()
 
 # # A pasta que colocaremos os nossos arquivos.
 # nameCreatedFolder = "test/"
